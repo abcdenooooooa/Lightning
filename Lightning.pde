@@ -25,8 +25,6 @@ void branch(int startX, int startY, int endX, int endY, float t){
   int bend = (int)(Math.random()*2);
   int up = (int)(Math.random()*2);
   while(t>0.05){
-    strokeWeight(t);
-    line(startX,startY,endX,endY);
     strokeWeight(t*2);
     stroke(150,200,255,75);
     line(startX,startY,endX,endY);
@@ -34,6 +32,8 @@ void branch(int startX, int startY, int endX, int endY, float t){
     stroke(150,200,255,25);
     line(startX,startY,endX,endY);
     stroke(235,235,255,255);
+    strokeWeight(t);
+    line(startX,startY,endX,endY);
     startX = endX;
     startY = endY;
     endX += (int)(Math.random()*x);
@@ -53,8 +53,6 @@ void branch(int startX, int startY, int endX, int endY, float t){
 
 void lightning(float t){
   while(endY < 830){
-    strokeWeight(t);
-    line(startX,startY,endX,endY);
     strokeWeight(t*2);
     stroke(150,200,255,75);
     line(startX,startY,endX,endY);
@@ -62,6 +60,8 @@ void lightning(float t){
     stroke(150,200,255,25);
     line(startX,startY,endX,endY);
     stroke(255,255,255,255);
+    strokeWeight(t);
+    line(startX,startY,endX,endY);
     startX = endX;
     startY = endY;
     endX += -20 + (int)(Math.random()*41);
@@ -77,6 +77,7 @@ void draw(){
   rect(-50,-50,900,900);
   o += 1;
 }
+
 
 
 
